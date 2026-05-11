@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryle Reynielle H. Magnaye | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --blue: #1A56DB;
+    --blue-light: #EEF2FF;
+    --teal: #0F766E;
+    --teal-light: #CCFBF1;
+    --amber: #B45309;
+    --amber-light: #FEF3C7;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --bg: #F8FAFC;
+    --white: #FFFFFF;
+    --text: #0F172A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+  .nav-links { display: flex; gap: 4px; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.15s;
+  }
+  .nav-links a:hover { background: var(--bg); color: var(--text); }
+
+  /* HERO */
+  .hero {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #EEF2FF 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .avatar-ring {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1A56DB, #0F766E);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--navy);
+    letter-spacing: -0.8px;
+    margin-bottom: 8px;
+  }
+  .hero .role {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .hero .tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary { background: var(--navy); color: white; }
+  .btn-primary:hover { background: #1e293b; }
+  .btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+  .btn-outline:hover { background: var(--bg); }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+  }
+  .stat-item {
+    padding: 1.5rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); }
+
+  /* SECTIONS */
+  .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-light);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.4px;
+  }
+  .section-desc {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 4rem 0 0; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: start; }
+  .about-text p { color: #334155; font-size: 15px; line-height: 1.8; margin-bottom: 1rem; }
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .info-row {
+    display: flex; justify-content: space-between;
+    font-size: 13px; padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-row:last-child { border: none; }
+  .info-row .key { color: var(--muted); }
+  .info-row .val { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* EDUCATION */
+  .edu-timeline { position: relative; }
+  .edu-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .edu-item {
+    display: flex; gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .edu-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .edu-dot.tertiary { background: var(--blue-light); color: var(--blue); }
+  .edu-dot.secondary { background: var(--teal-light); color: var(--teal); }
+  .edu-dot.primary { background: var(--amber-light); color: var(--amber); }
+  .edu-content {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    flex: 1;
+  }
+  .edu-school { font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .edu-degree { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .edu-year {
+    display: inline-block;
+    font-size: 11px; font-weight: 500;
+    padding: 2px 8px; border-radius: 4px;
+  }
+
+  /* CERTIFICATIONS */
+  .certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cert-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex; align-items: flex-start; gap: 12px;
+    transition: box-shadow 0.15s;
+  }
+  .cert-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .cert-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .ci-aws { background: var(--amber-light); color: var(--amber); }
+  .ci-sec { background: var(--teal-light); color: var(--teal); }
+  .ci-it  { background: var(--blue-light); color: var(--blue); }
+  .ci-ev  { background: #F3E8FF; color: #7C3AED; }
+  .cert-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .cert-org  { font-size: 12px; color: var(--muted); }
+
+  /* SKILLS */
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .skill-group h3 { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 1rem; }
+  .skill-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 4px 4px 4px 0;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text);
+  }
+  .skill-pill svg { width: 13px; height: 13px; color: var(--blue); }
+  .soft-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: #334155;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .soft-item:last-child { border: none; }
+  .soft-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .contact-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 1rem; color: var(--text); }
+  .contact-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-row:last-child { border: none; }
+  .c-icon { font-size: 15px; color: var(--blue); margin-top: 1px; }
+  .c-label { color: var(--muted); width: 70px; flex-shrink: 0; }
+  .c-val { color: var(--text); word-break: break-all; }
+  .ref-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ref-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px; color: var(--teal);
+    flex-shrink: 0;
+  }
+  .ref-name { font-weight: 500; font-size: 14px; color: var(--text); }
+  .ref-title { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+  .ref-email { font-size: 12px; color: var(--blue); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: #94A3B8;
+    text-align: center;
+    padding: 2rem;
+    font-size: 13px;
+  }
+  footer span { color: white; }
+
+  @media (max-width: 640px) {
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .about-grid, .certs-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .container { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Bryle Magnaye</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="avatar-ring">BM</div>
+  <h1>Bryle Reynielle H. Magnaye</h1>
+  <p class="role">BS in Technology &nbsp;·&nbsp; University of Batangas</p>
+  <div class="tagline">
+    ☁️ Aspiring IT Professional &nbsp;·&nbsp; Cloud &nbsp;·&nbsp; Cybersecurity &nbsp;·&nbsp; Tech Support
+  </div>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    <a href="#certifications" class="btn btn-outline">View Certifications</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">3</div>
+    <div class="stat-label">AWS Certifications</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">8</div>
+    <div class="stat-label">Trainings & Seminars</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Industry Certifications</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">7+</div>
+    <div class="stat-label">Years at UB</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="container" id="about">
+  <div class="section-tag">About Me</div>
+  <h2 class="section-title">Driven by technology,<br>shaped by learning.</h2>
+  <p class="section-desc">A quick look at who I am and what drives me.</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am Bryle Reynielle H. Magnaye, a Bachelor of Science in Technology student at the University of Batangas – Hilltop, Batangas City. I am passionate about cloud computing, cybersecurity, and IT systems, and I continuously seek opportunities to grow through training and certifications.</p>
+      <p>I come from Pooc, Balayan, Batangas, and I am driven by a desire to apply my technical knowledge in real-world IT environments — from system support and configuration to cloud infrastructure and secure computing practices.</p>
+      <p>My goal is to secure meaningful On-the-Job Training in the IT field where I can contribute, learn, and develop into a well-rounded IT professional.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-row"><span class="key">Date of Birth</span><span class="val">October 28, 1999</span></div>
+      <div class="info-row"><span class="key">Age</span><span class="val">26</span></div>
+      <div class="info-row"><span class="key">Citizenship</span><span class="val">Filipino</span></div>
+      <div class="info-row"><span class="key">Civil Status</span><span class="val">Single</span></div>
+      <div class="info-row"><span class="key">Religion</span><span class="val">Roman Catholic</span></div>
+      <div class="info-row"><span class="key">Height</span><span class="val">175 cm</span></div>
+      <div class="info-row"><span class="key">Weight</span><span class="val">82 kg</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<div class="container" id="education">
+  <div class="section-tag">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <p class="section-desc">My educational journey from primary school to university.</p>
+  <div class="edu-timeline">
+    <div class="edu-item">
+      <div class="edu-dot tertiary">🎓</div>
+      <div class="edu-content">
+        <div class="edu-school">University of Batangas</div>
+        <div class="edu-degree">Bachelor of Science in Technology · Hilltop, Batangas City</div>
+        <span class="edu-year" style="background:var(--blue-light);color:var(--blue);">2018 – 2026</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-dot secondary">📘</div>
+      <div class="edu-content">
+        <div class="edu-school">University of Batangas</div>
+        <div class="edu-degree">Secondary Education · Hilltop, Batangas City</div>
+        <span class="edu-year" style="background:var(--teal-light);color:var(--teal);">2012 – 2018</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-dot primary">✏️</div>
+      <div class="edu-content">
+        <div class="edu-school">Pooc Elementary School</div>
+        <div class="edu-degree">Primary Education · Pooc, Balayan, Batangas</div>
+        <span class="edu-year" style="background:var(--amber-light);color:var(--amber);">2006 – 2012</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CERTIFICATIONS -->
+<div class="container" id="certifications">
+  <div class="section-tag">Certifications & Trainings</div>
+  <h2 class="section-title">Credentials & Achievements</h2>
+  <p class="section-desc">Industry certifications and professional development programs I have completed.</p>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon ci-it">🏅</div>
+      <div>
+        <div class="cert-name">CompTIA IT Fundamentals+ (ITF+)</div>
+        <div class="cert-org">CompTIA · May 10, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-aws">☁️</div>
+      <div>
+        <div class="cert-name">AWS Cloud Quest: Cloud Practitioner</div>
+        <div class="cert-org">Amazon Web Services · Oct 9, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-aws">🏗️</div>
+      <div>
+        <div class="cert-name">AWS Academy Graduate – Cloud Architecting</div>
+        <div class="cert-org">Amazon Web Services · Sep 24, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-aws">🌐</div>
+      <div>
+        <div class="cert-name">AWS Academy Graduate – Cloud Foundations</div>
+        <div class="cert-org">Amazon Web Services · May 17, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-sec">🔒</div>
+      <div>
+        <div class="cert-name">Cybersecurity Fundamentals</div>
+        <div class="cert-org">IBM SkillsBuild · Dec 29, 2022</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-ev">🎤</div>
+      <div>
+        <div class="cert-name">Philippine Innovation Conference 2025</div>
+        <div class="cert-org">University of Batangas · Nov 21–22, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-ev">🤖</div>
+      <div>
+        <div class="cert-name">Future Forward: AI, Security & Web3</div>
+        <div class="cert-org">University of Batangas · Nov 17, 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ci-ev">💡</div>
+      <div>
+        <div class="cert-name">Trending Fields in IT</div>
+        <div class="cert-org">Henrico Legarda, Baguio City · Oct 24, 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<div class="container" id="skills">
+  <div class="section-tag">Skills</div>
+  <h2 class="section-title">Technical & Soft Skills</h2>
+  <p class="section-desc">A blend of technical knowledge and professional abilities.</p>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group">
+        <h3>Programming & Development</h3>
+        <span class="skill-pill">C++</span>
+        <span class="skill-pill">HTML</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">XAMPP</span>
+      </div>
+      <br>
+      <div class="skill-group">
+        <h3>Cloud & Security</h3>
+        <span class="skill-pill">AWS Cloud</span>
+        <span class="skill-pill">Cloud Foundations</span>
+        <span class="skill-pill">Cloud Architecting</span>
+        <span class="skill-pill">Cybersecurity</span>
+      </div>
+      <br>
+      <div class="skill-group">
+        <h3>Tools & Systems</h3>
+        <span class="skill-pill">Visual Studio Code</span>
+        <span class="skill-pill">Windows OS</span>
+        <span class="skill-pill">System Configuration</span>
+        <span class="skill-pill">Hardware Troubleshooting</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group">
+        <h3>Professional Skills</h3>
+        <div class="soft-item"><div class="soft-dot"></div> Logical & critical thinking</div>
+        <div class="soft-item"><div class="soft-dot"></div> Teamwork & collaboration</div>
+        <div class="soft-item"><div class="soft-dot"></div> Good verbal & written communication</div>
+        <div class="soft-item"><div class="soft-dot"></div> Time management & multitasking</div>
+        <div class="soft-item"><div class="soft-dot"></div> Customer-service oriented</div>
+        <div class="soft-item"><div class="soft-dot"></div> Detail-oriented & organized</div>
+        <div class="soft-item"><div class="soft-dot"></div> Adaptable & eager to learn</div>
+        <div class="soft-item"><div class="soft-dot"></div> Responsible & dependable</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<div class="container" id="contact">
+  <div class="section-tag">Contact</div>
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="section-desc">Open to OJT opportunities and IT industry connections.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+      <div class="contact-row">
+        <span class="c-icon">✉️</span>
+        <span class="c-label">Email</span>
+        <span class="c-val">brylemagnaye10@gmail.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-icon">📱</span>
+        <span class="c-label">Mobile</span>
+        <span class="c-val">09392019832</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-icon">📍</span>
+        <span class="c-label">Address</span>
+        <span class="c-val">Pooc, Balayan, Batangas</span>
+      </div>
+      <div class="contact-row" style="border:none;">
+        <span class="c-icon">🎓</span>
+        <span class="c-label">School</span>
+        <span class="c-val">University of Batangas</span>
+      </div>
+    </div>
+    <div>
+      <div class="contact-card" style="margin-bottom:12px;">
+        <h3>Objectives</h3>
+        <p style="font-size:13px;color:#334155;line-height:1.7;">To secure an On-the-Job Training position in the IT field where I can apply my knowledge in computer systems, programming, and technical support while enhancing my skills and gaining real-world industry experience.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="ref-card">
+    <div class="ref-avatar">BM</div>
+    <div>
+      <div class="ref-title">Character Reference</div>
+      <div class="ref-name">Mrs. Bernadet C. Macaraig</div>
+      <div class="ref-title">Associate Professor · University of Batangas</div>
+      <div class="ref-email">bernadet.macaraig@ub.edu.ph</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Bryle Reynielle H. Magnaye</span> &nbsp;·&nbsp; BS Technology, University of Batangas &nbsp;·&nbsp; brylemagnaye10@gmail.com</p>
+</footer>
+
+</body>
+</html>
