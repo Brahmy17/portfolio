@@ -291,7 +291,6 @@
   .soft-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
   /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .contact-card {
     background: var(--white);
     border: 1px solid var(--border);
@@ -308,25 +307,6 @@
   .c-icon { font-size: 15px; color: var(--blue); margin-top: 1px; }
   .c-label { color: var(--muted); width: 70px; flex-shrink: 0; }
   .c-val { color: var(--text); word-break: break-all; }
-  .ref-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    display: flex; align-items: center; gap: 14px;
-  }
-  .ref-avatar {
-    width: 48px; height: 48px; border-radius: 50%;
-    background: var(--teal-light);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 16px; color: var(--teal);
-    flex-shrink: 0;
-  }
-  .ref-name { font-weight: 500; font-size: 14px; color: var(--text); }
-  .ref-title { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
-  .ref-email { font-size: 12px; color: var(--blue); }
-
   /* FOOTER */
   footer {
     background: var(--navy);
@@ -339,7 +319,7 @@
 
   @media (max-width: 640px) {
     .stats-bar { grid-template-columns: 1fr 1fr; }
-    .about-grid, .certs-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; }
+    .about-grid, .certs-grid, .skills-layout { grid-template-columns: 1fr; }
     .hero h1 { font-size: 28px; }
     nav { padding: 0 1rem; }
     .nav-links { display: none; }
@@ -578,45 +558,27 @@
   <div class="section-tag">Contact</div>
   <h2 class="section-title">Let's Connect</h2>
   <p class="section-desc">Open to OJT opportunities and IT industry connections.</p>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3>Contact Information</h3>
-      <div class="contact-row">
-        <span class="c-icon">✉️</span>
-        <span class="c-label">Email</span>
-        <span class="c-val">brylemagnaye10@gmail.com</span>
-      </div>
-      <div class="contact-row">
-        <span class="c-icon">📱</span>
-        <span class="c-label">Mobile</span>
-        <span class="c-val">09392019832</span>
-      </div>
-      <div class="contact-row">
-        <span class="c-icon">📍</span>
-        <span class="c-label">Address</span>
-        <span class="c-val">Pooc, Balayan, Batangas</span>
-      </div>
-      <div class="contact-row" style="border:none;">
-        <span class="c-icon">🎓</span>
-        <span class="c-label">School</span>
-        <span class="c-val">University of Batangas</span>
-      </div>
+  <div class="contact-card" style="max-width:480px;">
+    <h3>Contact Information</h3>
+    <div class="contact-row">
+      <span class="c-icon">✉️</span>
+      <span class="c-label">Email</span>
+      <span class="c-val">brylemagnaye10@gmail.com</span>
     </div>
-    <div>
-      <div class="contact-card" style="margin-bottom:12px;">
-        <h3>Objectives</h3>
-        <p style="font-size:13px;color:#334155;line-height:1.7;">To secure an On-the-Job Training position in the IT field where I can apply my knowledge in computer systems, programming, and technical support while enhancing my skills and gaining real-world industry experience.</p>
-      </div>
+    <div class="contact-row">
+      <span class="c-icon">📱</span>
+      <span class="c-label">Mobile</span>
+      <span class="c-val">09392019832</span>
     </div>
-  </div>
-  <br>
-  <div class="ref-card">
-    <div class="ref-avatar">BM</div>
-    <div>
-      <div class="ref-title">Character Reference</div>
-      <div class="ref-name">Mrs. Bernadet C. Macaraig</div>
-      <div class="ref-title">Associate Professor · University of Batangas</div>
-      <div class="ref-email">bernadet.macaraig@ub.edu.ph</div>
+    <div class="contact-row">
+      <span class="c-icon">📍</span>
+      <span class="c-label">Address</span>
+      <span class="c-val">Pooc, Balayan, Batangas</span>
+    </div>
+    <div class="contact-row" style="border:none;">
+      <span class="c-icon">🎓</span>
+      <span class="c-label">School</span>
+      <span class="c-val">University of Batangas</span>
     </div>
   </div>
 </div>
